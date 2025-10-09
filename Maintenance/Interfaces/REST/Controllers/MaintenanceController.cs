@@ -1,3 +1,4 @@
+using Flota365.Platform.API.Maintenance.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;

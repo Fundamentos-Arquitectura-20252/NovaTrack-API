@@ -2,8 +2,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Flota365.Platform.API.Shared.Domain.Model.Events;
+using Flota365.Platform.API.Shared.Domain.Repositories;
+using Flota365.Platform.API.Shared.Infrastructure.Configuration;
 using Flota365.Platform.API.Shared.Infrastructure.Events;
 using Flota365.Platform.API.Shared.Infrastructure.Middleware;
+using Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 namespace Flota365.Platform.API.Shared.Infrastructure.Extensions
 {

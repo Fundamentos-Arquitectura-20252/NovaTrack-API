@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Flota365.Platform.API.Shared.Infrastructure.Pagination;
 
 
 namespace Flota365.Platform.API.Shared.Infrastructure.Extensions

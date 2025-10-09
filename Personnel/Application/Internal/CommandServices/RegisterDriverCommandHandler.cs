@@ -1,3 +1,9 @@
+using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
+using Flota365.Platform.API.Personnel.Domain.Model.Commands;
+using Flota365.Platform.API.Personnel.Domain.Repositories;
+using Flota365.Platform.API.Shared.Domain.Repositories;
+using MediatR;
+
 namespace Flota365.Platform.API.Personnel.Application.Internal.CommandServices
 {
     public class RegisterDriverCommandHandler : IRequestHandler<RegisterDriverCommand, int>

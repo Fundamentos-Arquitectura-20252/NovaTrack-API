@@ -1,3 +1,4 @@
+using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Flota365.Platform.API.Personnel.Domain.Model.Commands;

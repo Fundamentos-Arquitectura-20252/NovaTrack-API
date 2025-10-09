@@ -1,3 +1,5 @@
+using Flota365.Platform.API.Shared.Domain.Model.Events;
+
 namespace Flota365.Platform.API.Shared.Domain.Model
 {
     public interface IAggregateRoot : IEntity

@@ -1,3 +1,7 @@
+using Flota365.Platform.API.FleetManagement.Domain.Model.Aggregates;
+using Flota365.Platform.API.FleetManagement.Domain.Model.Commands;
+using Flota365.Platform.API.FleetManagement.Interfaces.REST.Resources;
+
 namespace Flota365.Platform.API.FleetManagement.Interfaces.REST.Transform
 {
     public static class UpdateVehicleCommandFromResourceAssembler

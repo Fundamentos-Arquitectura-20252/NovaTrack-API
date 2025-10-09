@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace Flota365.Platform.API.Shared.Domain.Specifications
 {
     public interface ISpecification<T>
@@ -55,10 +57,10 @@ namespace Flota365.Platform.API.Shared.Domain.Specifications
 
             var parameter = Expression.Parameter(typeof(T));
             var leftVisitor = new ReplaceExpressionVisitor(leftExpression.Parameters[0], parameter);
-            var left = leftVisitor.Visit(leftExpression.Body);
+            var left = leftVisitor.Visit((Expression?)leftExpression.Body);
 
             var rightVisitor = new ReplaceExpressionVisitor(rightExpression.Parameters[0], parameter);
-            var right = rightVisitor.Visit(rightExpression.Body);
+            var right = rightVisitor.Visit((Expression?)rightExpression.Body);
 
             return Expression.Lambda<Func<T, bool>>(Expression.AndAlso(left!, right!), parameter);
         }
@@ -82,10 +84,10 @@ namespace Flota365.Platform.API.Shared.Domain.Specifications
 
             var parameter = Expression.Parameter(typeof(T));
             var leftVisitor = new ReplaceExpressionVisitor(leftExpression.Parameters[0], parameter);
-            var left = leftVisitor.Visit(leftExpression.Body);
+            var left = leftVisitor.Visit((Expression?)leftExpression.Body);
 
             var rightVisitor = new ReplaceExpressionVisitor(rightExpression.Parameters[0], parameter);
-            var right = rightVisitor.Visit(rightExpression.Body);
+            var right = rightVisitor.Visit((Expression?)rightExpression.Body);
 
             return Expression.Lambda<Func<T, bool>>(Expression.OrElse(left!, right!), parameter);
         }

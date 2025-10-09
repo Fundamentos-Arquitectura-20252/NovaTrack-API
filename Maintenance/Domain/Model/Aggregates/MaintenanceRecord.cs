@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Flota365.Platform.API.Maintenance.Domain.Model.ValueObjects;
-using Flota365.Platform.API.Maintenance.Domain.Model.Events;
 
 namespace Flota365.Platform.API.Maintenance.Domain.Model.Aggregates
 {

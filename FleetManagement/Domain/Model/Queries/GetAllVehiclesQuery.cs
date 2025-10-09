@@ -22,8 +22,6 @@ namespace Flota365.Platform.API.FleetManagement.Domain.Model.Queries
     public record GetVehiclesInMaintenanceQuery() : IQuery<IEnumerable<VehicleResource>>;
     
     public record GetVehiclesDueForServiceQuery() : IQuery<IEnumerable<VehicleResource>>;
-
-    public record GetVehiclesDueForServiceQuery() : IQuery<IEnumerable<VehicleResource>>;
     
-    public record GetVehiclesInMaintenanceQuery() : IQuery<IEnumerable<VehicleResource>>;
+
 }
