@@ -27,7 +27,7 @@ namespace Flota365.Platform.API.Personnel.Domain.Model.Aggregates
         
         public int ExperienceYears { get; private set; } = 0;
         
-        public DriverStatus Status { get; private set; } = DriverStatus.Active;
+        public DriverStatus Status { get; private set; } = DriverStatus.Available;
         
         public bool IsActive { get; private set; } = true;
         

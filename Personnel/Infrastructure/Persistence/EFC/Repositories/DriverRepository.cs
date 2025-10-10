@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
 using Flota365.Platform.API.Personnel.Domain.Model.ValueObjects;
 using Flota365.Platform.API.Personnel.Domain.Repositories;
+using Flota365.Platform.API.Personnel.Infrastructure.Persistence.EFC.Repositories;
 using Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC;
 
 // DriverRepository.cs

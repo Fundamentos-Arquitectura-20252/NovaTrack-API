@@ -1,3 +1,4 @@
+using Flota365.Platform.API.FleetManagement.Domain.Model.Aggregates;
 using Flota365.Platform.API.Shared.Domain.Model;
 using Flota365.Platform.API.FleetManagement.Domain.Model.ValueObjects;
 

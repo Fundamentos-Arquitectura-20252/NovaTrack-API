@@ -1,3 +1,5 @@
+using System.Net.Mime;
+using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Flota365.Platform.API.Personnel.Domain.Model.Commands;
@@ -10,7 +12,9 @@ using Flota365.Platform.API.Personnel.Domain.Model.ValueObjects;
 namespace Flota365.Platform.API.Personnel.Interfaces.REST.Controllers
 {
     [ApiController]
-    [Route("api/personnel/drivers")]
+    [Route("api/personnel/drivers")] // Defines the route for the controller
+    [Produces(MediaTypeNames.Application.Json)] // Specifies that the API produces JSON responses
+    [Tags("Drivers")]
     public class DriversController : ControllerBase
     {
         private readonly IMediator _mediator;

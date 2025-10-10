@@ -40,12 +40,15 @@ builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 });
 
+// Add Shared Infrastructure (includes shared services)
+builder.Services.AddSharedInfrastructure(builder.Configuration);
+
 // Add Bounded Context Services
-builder.Services.AddSharedServices();
 builder.Services.AddIAMServices();
 builder.Services.AddFleetManagementServices();
 builder.Services.AddPersonnelServices();
 builder.Services.AddMaintenanceServices();
+
 
 // Add CORS
 builder.Services.AddCors(options =>
@@ -83,13 +86,13 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Flota365 Platform API",
+        Title = "NovaTrack Platform API",
         Version = "v1.0",
         Description = "Fleet Management Platform - DDD Architecture with CQRS",
         Contact = new OpenApiContact
         {
-            Name = "Flota365 Development Team",
-            Email = "dev@flota365.com",
+            Name = "NovaTrack Development Team",
+            Email = "dev@NovaTrack.com",
             Url = new Uri("https://github.com/flota365/platform")
         },
         License = new OpenApiLicense
@@ -133,7 +136,13 @@ builder.Services.AddSwaggerGen(c =>
     }
 
     // Group by bounded contexts
-    c.TagActionsBy(api => new[] { GetBoundedContextFromPath(api.RelativePath) });
+    c.TagActionsBy(api =>
+    {
+        var bc = GetBoundedContextFromPath(api.RelativePath);
+        var controller = api.ActionDescriptor.RouteValues["controller"];
+        return new[] { $"{bc} - {controller}" };
+    });
+
     c.DocInclusionPredicate((name, api) => true);
 });
 
@@ -196,6 +205,8 @@ app.Use(async (context, next) =>
 
 // CORS
 app.UseCors(app.Environment.IsDevelopment() ? "AllowAll" : "AllowSpecificOrigins");
+// Shared middleware (logging, exception handling, etc.)
+app.UseSharedInfrastructure(app.Environment);
 
 // Authentication & Authorization (when implemented)
 // app.UseAuthentication();
