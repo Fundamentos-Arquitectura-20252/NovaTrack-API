@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Flota365.Platform.API.Analytics.Domain.Model.Queries;
@@ -6,7 +7,9 @@ using Flota365.Platform.API.Analytics.Interfaces.REST.Resources;
 namespace Flota365.Platform.API.Analytics.Interfaces.REST.Controllers
 {
     [ApiController]
-    [Route("api/analytics")]
+    [Route("api/analytics")] // Defines the route for the controller
+    [Produces(MediaTypeNames.Application.Json)] // Specifies that the API produces JSON responses
+    [Tags("Dashboard")]
     public class DashboardController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Flota365.Platform.API</name>
+    </assembly>
+    <members>
+        <member name="M:Flota365.Platform.API.Analytics.Interfaces.REST.Controllers.DashboardController.GetDashboardStats">
+            <summary>
+            Get dashboard statistics
+            </summary>
+        </member>
+        <member name="M:Flota365.Platform.API.Analytics.Interfaces.REST.Controllers.DashboardController.GetFleetSummary">
+            <summary>
+            Get fleet summary for dashboard
+            </summary>
+        </member>
+        <member name="M:Flota365.Platform.API.Analytics.Interfaces.REST.Controllers.DashboardController.GetActiveVehicles">
+            <summary>
+            Get active vehicles for dashboard
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -31,15 +31,15 @@ namespace Flota365.Platform.API.Personnel.Application.Internal.CommandServices
 
             switch (request.Status)
             {
-                case Domain.Model.ValueObjects.DriverStatus.Available:
+                case Domain.Model.Aggregates.DriverStatus.Available:
                     driver.SetAvailable(); break;
-                case Domain.Model.ValueObjects.DriverStatus.OnRoute:
+                case Domain.Model.Aggregates.DriverStatus.OnRoute:
                     driver.SetOnRoute(); break;
-                case Domain.Model.ValueObjects.DriverStatus.OnBreak:
+                case Domain.Model.Aggregates.DriverStatus.OnBreak:
                     driver.SetOnBreak(); break;
-                case Domain.Model.ValueObjects.DriverStatus.Suspended:
+                case Domain.Model.Aggregates.DriverStatus.Suspended:
                     driver.Suspend("Updated via command"); break;
-                case Domain.Model.ValueObjects.DriverStatus.Inactive:
+                case Domain.Model.Aggregates.DriverStatus.Inactive:
                     driver.Deactivate(); break;
             }
 

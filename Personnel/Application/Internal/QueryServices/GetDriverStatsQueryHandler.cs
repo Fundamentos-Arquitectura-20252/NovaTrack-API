@@ -1,3 +1,4 @@
+using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
 using MediatR;
 using Flota365.Platform.API.Personnel.Domain.Model.Queries;
 using Flota365.Platform.API.Personnel.Domain.Repositories;

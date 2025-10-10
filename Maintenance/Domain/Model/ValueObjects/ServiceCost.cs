@@ -6,6 +6,8 @@ namespace Flota365.Platform.API.Maintenance.Domain.Model.ValueObjects
         public string Currency { get; }
         public ServiceCostType Type { get; }
         public List<CostItem> Items { get; set; }
+        
+        private ServiceCost() { }
 
         public ServiceCost(decimal amount, string currency = "PEN", ServiceCostType type = ServiceCostType.Total)
         {

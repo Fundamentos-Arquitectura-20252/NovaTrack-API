@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Flota365.Platform.API.Maintenance.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +12,9 @@ using Flota365.Platform.API.Maintenance.Domain.Repositories;
 namespace Flota365.Platform.API.Maintenance.Interfaces.REST.Controllers
 {
     [ApiController]
-    [Route("api/maintenance")]
+    [Route("api/maintenance")] // Defines the route for the controller
+    [Produces(MediaTypeNames.Application.Json)] // Specifies that the API produces JSON responses
+    [Tags("Maintenance")]
     public class MaintenanceController : ControllerBase
     {
         private readonly IMediator _mediator;

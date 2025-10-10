@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Flota365.Platform.API.IAM.Domain.Model.Commands;
@@ -8,7 +9,9 @@ using Flota365.Platform.API.IAM.Interfaces.REST.Transform;
 namespace Flota365.Platform.API.IAM.Interfaces.REST.Controllers
 {
     [ApiController]
-    [Route("api/iam/users")]
+    [Route("api/iam/users")] // Defines the route for the controller
+    [Produces(MediaTypeNames.Application.Json)] // Specifies that the API produces JSON responses
+    [Tags("Users")]
     public class UsersController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -121,7 +124,10 @@ namespace Flota365.Platform.API.IAM.Interfaces.REST.Controllers
         {
             try
             {
-                var query = activeOnly ? new GetActiveUsersQuery() : new GetAllUsersQuery();
+                IRequest<IEnumerable<UserResource>> query = activeOnly 
+                    ? new GetActiveUsersQuery() 
+                    : new GetAllUsersQuery();
+
                 var users = await _mediator.Send(query);
                 return Ok(users);
             }
@@ -134,6 +140,7 @@ namespace Flota365.Platform.API.IAM.Interfaces.REST.Controllers
                 });
             }
         }
+
 
         [HttpGet("by-email")]
         public async Task<ActionResult<UserResource>> GetUserByEmail([FromQuery] string email)

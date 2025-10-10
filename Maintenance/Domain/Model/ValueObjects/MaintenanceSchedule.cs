@@ -1,9 +1,13 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Flota365.Platform.API.Maintenance.Domain.Model.ValueObjects
 {
     public record MaintenanceSchedule
     {
         public DateTime ScheduledDate { get; }
         public DateTime? CompletedDate { get; }
+        
+        [NotMapped]
         public List<ScheduleChange> Changes { get; }
         public int Priority { get; }
 

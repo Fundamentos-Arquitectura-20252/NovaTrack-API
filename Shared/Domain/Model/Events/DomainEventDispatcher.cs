@@ -1,3 +1,4 @@
+using Flota365.Platform.API.Shared.Domain.Model.Events;
 using MediatR;
 namespace Flota365.Platform.API.Shared.Infrastructure.Events
 {

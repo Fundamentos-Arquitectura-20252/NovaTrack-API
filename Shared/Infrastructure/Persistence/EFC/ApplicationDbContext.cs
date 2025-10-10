@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Flota365.Platform.API.Shared.Domain.Repositories;
@@ -5,6 +6,7 @@ using Flota365.Platform.API.IAM.Domain.Model.Aggregates;
 using Flota365.Platform.API.FleetManagement.Domain.Model.Aggregates;
 using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
 using Flota365.Platform.API.Maintenance.Domain.Model.Aggregates;
+using Flota365.Platform.API.Maintenance.Domain.Model.ValueObjects;
 
 // ApplicationDbContext.cs
 namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
@@ -56,8 +58,10 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.PasswordHash).IsRequired();
                 entity.Property(e => e.Role).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
+                entity.Property(e => e.UpdatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
             });
         }
 
@@ -72,8 +76,10 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.Description).HasMaxLength(500);
                 entity.Property(e => e.Type).HasConversion<string>();
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
+                entity.Property(e => e.UpdatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
 
                 entity.HasMany(e => e.Vehicles)
                       .WithOne(v => v.Fleet)
@@ -90,8 +96,10 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.Mileage).HasDefaultValue(0);
                 entity.Property(e => e.Status).HasConversion<string>();
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
+                entity.Property(e => e.UpdatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
 
                 // Configure LicensePlate value object
                 entity.OwnsOne(e => e.LicensePlate, licensePlate =>
@@ -117,8 +125,10 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.ExperienceYears).HasDefaultValue(0);
                 entity.Property(e => e.Status).HasConversion<string>();
                 entity.Property(e => e.IsActive).HasDefaultValue(true);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
+                entity.Property(e => e.UpdatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
 
                 // Configure DriverLicense value object
                 entity.OwnsOne(e => e.License, license =>
@@ -157,8 +167,10 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.Status).HasConversion<string>();
                 entity.Property(e => e.Notes).HasMaxLength(500);
                 entity.Property(e => e.ServiceProvider).HasMaxLength(200);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
+                entity.Property(e => e.UpdatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
 
                 // Configure MaintenanceCost value object
                 entity.OwnsOne(e => e.Cost, cost =>
@@ -203,7 +215,8 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                 entity.Property(e => e.Quality).HasConversion<string>();
                 entity.Property(e => e.PartsUsed).HasMaxLength(1000);
                 entity.Property(e => e.Notes).HasMaxLength(500);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP()");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)")
+                    .ValueGeneratedNever();
 
                 // Configure ServiceCost value object
                 entity.OwnsOne(e => e.Cost, cost =>
@@ -216,6 +229,18 @@ namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
                         .HasColumnName("Currency")
                         .HasMaxLength(3)
                         .HasDefaultValue("PEN");
+                    cost.Property(c => c.Type)
+                        .HasConversion<string>();
+
+
+                    // Guardar los CostItems como JSON
+                    cost.Property(c => c.Items)
+                        .HasConversion(
+                            v => JsonSerializer.Serialize(v, new JsonSerializerOptions()),
+                            v => JsonSerializer.Deserialize<List<CostItem>>(v, new JsonSerializerOptions())!
+                        )
+                        .HasColumnName("CostItems")
+                        .HasColumnType("json");
                 });
             });
         }
