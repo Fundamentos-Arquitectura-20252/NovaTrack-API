@@ -1,0 +1,6 @@
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.csproj.AssemblyReference.cache
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.AssemblyInfoInputs.cache
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.AssemblyInfo.cs
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.csproj.CoreCompileInputs.cache
+D:\u\fundamentos de arquitectura\backend\NovaTrack-API\Shared\obj\Debug\net9.0\Shared.sourcelink.json

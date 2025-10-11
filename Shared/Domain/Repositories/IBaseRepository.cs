@@ -1,4 +1,4 @@
-﻿namespace Flota365.Platform.API.Shared.Domain.Repositories
+﻿namespace NovaTrack.Shared.Domain.Repositories
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2f5AgWs0zmk=",
+  "success": true,
+  "projectFilePath": "D:\\u\\fundamentos de arquitectura\\backend\\NovaTrack-API\\Microservices\\FleetManagement.API\\FleetManagement.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.7\\microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

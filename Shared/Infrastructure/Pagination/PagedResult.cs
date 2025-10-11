@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 
 // Pagination Models
-namespace Flota365.Platform.API.Shared.Infrastructure.Pagination
+namespace NovaTrack.Shared.Infrastructure.Pagination
 {
     public class PagedRequest
     {

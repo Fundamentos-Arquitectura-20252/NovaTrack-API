@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace Flota365.Platform.API.Shared.Domain.Specifications
+namespace NovaTrack.Shared.Domain.Specifications
 {
     public interface ISpecification<T>
     {

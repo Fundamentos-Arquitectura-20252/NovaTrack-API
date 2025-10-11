@@ -1,9 +1,9 @@
 using System.Linq.Expressions;
-using Flota365.Platform.API.Shared.Domain.Specifications;
-using Flota365.Platform.API.Shared.Infrastructure.Pagination;
+using NovaTrack.Shared.Domain.Specifications;
+using NovaTrack.Shared.Infrastructure.Pagination;
 
 
-namespace Flota365.Platform.API.Shared.Infrastructure.Extensions
+namespace NovaTrack.Shared.Infrastructure.Extensions
 {
     public static class QueryableExtensions
     {

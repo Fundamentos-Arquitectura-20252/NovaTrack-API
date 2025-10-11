@@ -1,15 +1,15 @@
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Flota365.Platform.API.Shared.Domain.Repositories;
-using Flota365.Platform.API.IAM.Domain.Model.Aggregates;
-using Flota365.Platform.API.FleetManagement.Domain.Model.Aggregates;
-using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
-using Flota365.Platform.API.Maintenance.Domain.Model.Aggregates;
-using Flota365.Platform.API.Maintenance.Domain.Model.ValueObjects;
+using NovaTrack.Shared.Domain.Repositories;
+using NovaTrack.IAM.Domain.Model.Aggregates;
+using NovaTrack.FleetManagement.Domain.Model.Aggregates;
+using NovaTrack.Personnel.Domain.Model.Aggregates;
+using NovaTrack.Maintenance.Domain.Model.Aggregates;
+using NovaTrack.Maintenance.Domain.Model.ValueObjects;
 
 // ApplicationDbContext.cs
-namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC
+namespace NovaTrack.Shared.Infrastructure.Persistence.EFC
 {
     public class ApplicationDbContext : DbContext
     {

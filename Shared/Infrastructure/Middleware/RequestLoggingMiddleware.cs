@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace Flota365.Platform.API.Shared.Infrastructure.Middleware
+namespace NovaTrack.Shared.Infrastructure.Middleware
 {
     public class RequestLoggingMiddleware
     {

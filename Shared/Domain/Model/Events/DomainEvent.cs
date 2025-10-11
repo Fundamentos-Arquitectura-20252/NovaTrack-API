@@ -1,5 +1,5 @@
 using MediatR;
-namespace Flota365.Platform.API.Shared.Domain.Model.Events
+namespace NovaTrack.Shared.Domain.Model.Events
 {
     public abstract record DomainEvent(DateTime OccurredOn) : INotification
     {

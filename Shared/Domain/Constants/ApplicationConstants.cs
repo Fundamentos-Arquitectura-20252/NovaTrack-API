@@ -1,12 +1,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
-using Flota365.Platform.API.Shared.Domain.Model.Events;
-using Flota365.Platform.API.Shared.Infrastructure.Events;
-using Flota365.Platform.API.Shared.Infrastructure.Middleware;
+using NovaTrack.Shared.Domain.Model.Events;
+using NovaTrack.Shared.Infrastructure.Events;
+using NovaTrack.Shared.Infrastructure.Middleware;
 
 // Application Constants
-namespace Flota365.Platform.API.Shared.Domain.Constants
+namespace NovaTrack.Shared.Domain.Constants
 {
     public static class ApplicationConstants
     {

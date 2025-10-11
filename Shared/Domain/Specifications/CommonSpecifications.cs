@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 
 
 
-namespace Flota365.Platform.API.Shared.Domain.Specifications
+namespace NovaTrack.Shared.Domain.Specifications
 {
     public class ActiveEntitySpecification<T> : Specification<T> where T : class
     {

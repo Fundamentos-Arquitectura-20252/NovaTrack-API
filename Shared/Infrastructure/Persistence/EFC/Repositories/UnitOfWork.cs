@@ -1,13 +1,13 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Flota365.Platform.API.Shared.Domain.Repositories;
-using Flota365.Platform.API.IAM.Domain.Model.Aggregates;
-using Flota365.Platform.API.FleetManagement.Domain.Model.Aggregates;
-using Flota365.Platform.API.Personnel.Domain.Model.Aggregates;
-using Flota365.Platform.API.Maintenance.Domain.Model.Aggregates;
+using NovaTrack.Shared.Domain.Repositories;
+using NovaTrack.IAM.Domain.Model.Aggregates;
+using NovaTrack.FleetManagement.Domain.Model.Aggregates;
+using NovaTrack.Personnel.Domain.Model.Aggregates;
+using NovaTrack.Maintenance.Domain.Model.Aggregates;
 
-namespace Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories
+namespace NovaTrack.Shared.Infrastructure.Persistence.EFC.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

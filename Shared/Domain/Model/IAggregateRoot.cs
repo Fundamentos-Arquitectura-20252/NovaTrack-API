@@ -1,6 +1,6 @@
-using Flota365.Platform.API.Shared.Domain.Model.Events;
+using NovaTrack.Shared.Domain.Model.Events;
 
-namespace Flota365.Platform.API.Shared.Domain.Model
+namespace NovaTrack.Shared.Domain.Model
 {
     public interface IAggregateRoot : IEntity
     {

@@ -37,10 +37,6 @@
 
   <ItemGroup>
     <Folder Include="Analytics\" />
-    <Folder Include="FleetManagement\" />
-    <Folder Include="IAM\" />
-    <Folder Include="Maintenance\" />
-    <Folder Include="Personnel\" />
     <Folder Include="Logs\" />
     <Folder Include="uploads\" />
   </ItemGroup>

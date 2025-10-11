@@ -1,12 +1,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Flota365.Platform.API.Shared.Domain.Model.Events;
-using Flota365.Platform.API.Shared.Domain.Repositories;
-using Flota365.Platform.API.Shared.Infrastructure.Configuration;
-using Flota365.Platform.API.Shared.Infrastructure.Events;
-using Flota365.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
+using NovaTrack.Shared.Domain.Model.Events;
+using NovaTrack.Shared.Domain.Repositories;
+using NovaTrack.Shared.Infrastructure.Configuration;
+using NovaTrack.Shared.Infrastructure.Events;
+using NovaTrack.Shared.Infrastructure.Persistence.EFC.Repositories;
 
-namespace Flota365.Platform.API.Shared.Infrastructure.Extensions
+namespace NovaTrack.Shared.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {

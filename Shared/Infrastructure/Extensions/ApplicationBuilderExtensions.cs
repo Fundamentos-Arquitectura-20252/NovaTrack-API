@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using Flota365.Platform.API.Shared.Infrastructure.Middleware;
+using NovaTrack.Shared.Infrastructure.Middleware;
 
-namespace Flota365.Platform.API.Shared.Infrastructure.Extensions
+namespace NovaTrack.Shared.Infrastructure.Extensions
 {
     public static class ApplicationBuilderExtensions
     {

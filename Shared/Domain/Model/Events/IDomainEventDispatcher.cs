@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Flota365.Platform.API.Shared.Domain.Model.Events
+namespace NovaTrack.Shared.Domain.Model.Events
 {
     public interface IDomainEventDispatcher
     {

@@ -1,4 +1,4 @@
-namespace Flota365.Platform.API.Shared.Domain.Model
+namespace NovaTrack.Shared.Domain.Model
 {
     public interface IEntity
     {

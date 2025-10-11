@@ -1,6 +1,6 @@
-using Flota365.Platform.API.Shared.Domain.Model.Events;
+using NovaTrack.Shared.Domain.Model.Events;
 using MediatR;
-namespace Flota365.Platform.API.Shared.Infrastructure.Events
+namespace NovaTrack.Shared.Infrastructure.Events
 {
     public class DomainEventDispatcher : IDomainEventDispatcher
     {
