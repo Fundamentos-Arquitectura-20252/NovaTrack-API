@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Flota365.Platform.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d69575c97ad821a67995fcce617f904e68246aa0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48160e69fb395f56797ea361fc87409a16bb2142")]
 [assembly: System.Reflection.AssemblyProductAttribute("Flota365.Platform.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Flota365.Platform.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
